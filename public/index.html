@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="UTF-8">
+   <title>Saludo Web 2.0</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <style>
+     body {
+       font-family: sans-serif
+     }
+   </style>
+ </head>
+ <body>
+   <h1>Saludo Web 2.0</h1>
+   <form name="vista">
+     <p>
+       <input type="text" name="nombre1" required placeholder="Nombre 1"
+         accesskey="1">
+     </p>
+     <p>
+       <input type="text" name="nombre2" required placeholder="Nombre 2"
+         accesskey="2">
+     </p>
+     <p>
+       <output name="respuesta"></output>
+     </p>
+     <p>
+       <button type="submit">Saludar</button>
+     </p>
+   </form>
+   <script>
+     "use strict";
+     document.vista.addEventListener("submit", saluda);
+     function saluda(evt) {
+       evt.preventDefault();
+       const nombre1 = document.vista.nombre1.value.trim();
+       const nombre2 = document.vista.nombre2.value.trim();
+       document.vista.respuesta.value = `Saludos a ${nombre1} y a ${nombre2}.`;
+     }
+   </script>
+ </body>
+</html>
+
